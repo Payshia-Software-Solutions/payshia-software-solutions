@@ -6,6 +6,7 @@ import { PortfolioSection } from '@/components/portfolio-section';
 import { BlogSection } from '@/components/blog-section';
 import { CtaSection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
+import { WhyChooseUsSection } from '@/components/why-choose-us-section';
 
 export default async function Home() {
 
@@ -16,6 +17,7 @@ export default async function Home() {
         <HeroSection />
         <TransformingSection />
         <ServicesSection />
+        <WhyChooseUsSection />
         <PortfolioSection />
         <BlogSection />
         <CtaSection />
