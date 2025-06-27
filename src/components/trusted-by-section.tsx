@@ -49,7 +49,7 @@ const logos = [
   
   export function TrustedBySection() {
     return (
-      <section className="w-full py-20 md:py-24 bg-background border-t border-b border-white/5">
+      <section className="w-full py-20 md:py-24 bg-transparent border-t border-b border-white/5">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-8">
             <p className="text-sm tracking-widest uppercase text-muted-foreground">

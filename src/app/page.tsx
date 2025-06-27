@@ -11,16 +11,21 @@ import { TrustedBySection } from '@/components/trusted-by-section';
 export default async function Home() {
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black text-white">
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <TransformingSection />
-        <ServicesSection />
-        <WhyChooseUsSection />
-        <TrustedBySection />
-        <PortfolioSection />
-        <CtaSection />
+        <div className="relative">
+          <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/30 to-transparent" />
+          <div className="relative z-10">
+            <TransformingSection />
+            <ServicesSection />
+            <WhyChooseUsSection />
+            <TrustedBySection />
+            <PortfolioSection />
+            <CtaSection />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

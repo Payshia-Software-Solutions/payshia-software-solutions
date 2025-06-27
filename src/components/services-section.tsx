@@ -31,8 +31,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative w-full py-20 md:py-24 lg:py-32 bg-black text-white">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/10 to-transparent" />
+    <section id="services" className="w-full py-20 md:py-24 lg:py-32 bg-transparent text-white">
       <div className="container relative px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-4">

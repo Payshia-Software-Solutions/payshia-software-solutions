@@ -1,6 +1,6 @@
 export function TransformingSection() {
   return (
-    <section className="w-full py-20 md:py-24 lg:py-32 bg-black text-white border-t border-b border-primary/20">
+    <section className="w-full py-20 md:py-24 lg:py-32 bg-transparent text-white border-t border-b border-primary/20">
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
