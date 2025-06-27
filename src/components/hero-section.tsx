@@ -25,7 +25,7 @@ export function HeroSection() {
     
   return (
     <section className="relative w-full bg-black overflow-hidden">
-      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,rgba(217,119,6,0.25),transparent)]" />
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,rgba(234,179,8,0.3),transparent)]" />
       
       <div className="container relative z-30 px-4 md:px-6 text-center text-white py-32 md:py-48 lg:py-56">
         <div className="flex flex-col items-center space-y-6">
