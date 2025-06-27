@@ -7,6 +7,7 @@ import { BlogSection } from '@/components/blog-section';
 import { CtaSection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 import { WhyChooseUsSection } from '@/components/why-choose-us-section';
+import { TrustedBySection } from '@/components/trusted-by-section';
 
 export default async function Home() {
 
@@ -18,6 +19,7 @@ export default async function Home() {
         <TransformingSection />
         <ServicesSection />
         <WhyChooseUsSection />
+        <TrustedBySection />
         <PortfolioSection />
         <BlogSection />
         <CtaSection />
