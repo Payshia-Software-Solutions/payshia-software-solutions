@@ -2,29 +2,44 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { generateCompanyIntro, GenerateCompanyIntroOutput } from '@/ai/flows/generate-company-intro';
+import { useEffect, useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
-interface HeroSectionProps {
-  description: string;
-}
-
-export function HeroSection({ description }: HeroSectionProps) {
+export function HeroSection() {
+    const { toast } = useToast();
+    const [intro, setIntro] = useState<GenerateCompanyIntroOutput>({ introduction: "Your Partner in Digital Transformation. Payshia Software Solution Pvt Ltd. delivers cutting-edge software development and IT services tailored to propel your business forward." });
+  
+    useEffect(() => {
+      generateCompanyIntro({ currentTrends: 'AI-driven development and automation' })
+        .then(setIntro)
+        .catch((e) => {
+            console.error(e);
+            toast({
+                title: "Error",
+                description: "Failed to generate company intro. Make sure your GOOGLE_API_KEY is set in .env",
+                variant: "destructive"
+            })
+        });
+    }, [toast]);
+    
   return (
     <section className="relative w-full bg-black overflow-hidden">
-      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.3),transparent)]" />
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,rgba(217,119,6,0.25),transparent)]" />
       
       <div className="container relative z-30 px-4 md:px-6 text-center text-white py-32 md:py-48 lg:py-56">
         <div className="flex flex-col items-center space-y-6">
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Your Partner in <span className="text-primary">Digital Transformation</span>
+            Innovating Tomorrow's <span className="text-primary">Solutions</span> Today
           </h1>
           <p className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl">
-            {description}
+            {intro.introduction}
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4">
             <Button size="lg" asChild>
                 <Link href="#services">Explore Our Services</Link>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild className="border-primary text-primary-foreground hover:bg-primary/10">
                 <Link href="#contact">Get a Free Consultation</Link>
             </Button>
           </div>
