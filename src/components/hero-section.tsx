@@ -1,101 +1,43 @@
 'use client';
 
-import { useState, useTransition } from 'react';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { generateCompanyIntro } from '@/ai/flows/generate-company-intro';
-import { Loader2 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { Label } from '@/components/ui/label';
+import Link from 'next/link';
 
 interface HeroSectionProps {
-  initialIntro: string;
+  description: string;
 }
 
-export function HeroSection({ initialIntro }: HeroSectionProps) {
-  const [intro, setIntro] = useState(initialIntro);
-  const [trends, setTrends] = useState('AI-driven development, low-code platforms, and increased focus on cybersecurity.');
-  const [isPending, startTransition] = useTransition();
-  const { toast } = useToast();
-
-  const handleGenerateIntro = () => {
-    startTransition(async () => {
-      try {
-        const result = await generateCompanyIntro({ currentTrends: trends });
-        if (result?.introduction) {
-          setIntro(result.introduction);
-          toast({
-            title: "Introduction Updated",
-            description: "The company introduction has been regenerated.",
-          });
-        } else {
-          toast({
-            variant: "destructive",
-            title: "Error",
-            description: "Failed to generate a new introduction. Make sure your API key is set.",
-          });
-        }
-      } catch (e: any) {
-        console.error(e);
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: "Failed to generate intro. Please ensure your GOOGLE_API_KEY is set in the .env file.",
-        });
-      }
-    });
-  };
-
+export function HeroSection({ description }: HeroSectionProps) {
   return (
-    <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
-      <div className="container grid gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
-        <div className="flex flex-col justify-center space-y-4">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
-            ApexForge Digital
+    <section className="relative w-full bg-black overflow-hidden">
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: 'url(https://placehold.co/1920x1080.png)' }}
+        data-ai-hint="abstract background"
+      />
+      
+      <div className="absolute inset-0 z-10 backdrop-blur-sm bg-black/70" />
+
+      <div className="absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--primary)/0.15),transparent_70%)]" />
+
+      <div className="container relative z-30 px-4 md:px-6 text-center text-white py-32 md:py-48 lg:py-56">
+        <div className="flex flex-col items-center space-y-6">
+          <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+            Innovating Tomorrow's<br />
+            <span className="text-primary">Solutions</span> Today
           </h1>
-          <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            {intro}
+          <p className="max-w-[750px] mx-auto text-lg text-foreground/80 md:text-xl">
+            {description}
           </p>
-          <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4">
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4">
             <Button size="lg" asChild>
-                <a href="#portfolio">View Our Work</a>
+                <Link href="#services">Explore Our Services</Link>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
-                <a href="#services">Our Services</a>
+            <Button size="lg" variant="outline" asChild>
+                <Link href="#contact">Get a Free Consultation</Link>
             </Button>
           </div>
         </div>
-        <Card className="flex flex-col justify-center">
-          <CardHeader>
-            <CardTitle className="font-headline">AI-Powered Introduction</CardTitle>
-            <CardDescription>
-              Customize our introduction by providing current software development trends.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-                <div className="space-y-2">
-                    <Label htmlFor="trends">Current Trends</Label>
-                    <Textarea
-                        id="trends"
-                        placeholder="e.g., AI integration, serverless architecture..."
-                        value={trends}
-                        onChange={(e) => setTrends(e.target.value)}
-                        className="min-h-[100px]"
-                        disabled={isPending}
-                    />
-                </div>
-                <Button onClick={handleGenerateIntro} disabled={isPending} className="w-full">
-                    {isPending ? (
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                        'Regenerate Introduction'
-                    )}
-                </Button>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
