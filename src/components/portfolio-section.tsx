@@ -1,64 +1,61 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import Image from 'next/image';
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const projects = [
+const testimonials = [
   {
-    title: "Project Alpha",
-    description: "A comprehensive enterprise resource planning (ERP) system for the manufacturing sector.",
-    image: "https://placehold.co/600x400.png",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    hint: "technology code"
+    name: "Sarah Johnson",
+    title: "CEO, TechCorp",
+    quote: "Payshia delivered exceptional results. Their expertise and dedication transformed our business processes completely.",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "woman face"
   },
   {
-    title: "E-commerce Platform",
-    description: "A scalable e-commerce solution with a custom CMS and payment gateway integration.",
-    image: "https://placehold.co/600x400.png",
-    tags: ["Next.js", "GraphQL", "Stripe"],
-    hint: "online store"
+    name: "Michael Chen",
+    title: "CTO, InnovateLabs",
+    quote: "Outstanding quality and timely delivery. The team at Payshia exceeded all our expectations.",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "man face"
   },
   {
-    title: "HealthTech Mobile App",
-    description: "A cross-platform mobile app for remote patient monitoring and telehealth consultations.",
-    image: "https://placehold.co/600x400.png",
-    tags: ["React Native", "Firebase", "WebRTC"],
-    hint: "health application"
-  }
+    name: "Emma Rodriguez",
+    title: "Director, GlobalTech",
+    quote: "Professional, reliable, and innovative. Payshia is our go-to partner for all software development needs.",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "woman face"
+  },
 ];
+
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="w-full py-20 md:py-24 lg:py-32">
+    <section id="testimonials" className="w-full py-20 md:py-24 lg:py-32 bg-black text-white">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Our Work</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Featured Projects</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">What Our Clients Say</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Check out some of the innovative solutions we've delivered for our clients.
+              Trusted by businesses worldwide
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 pt-12">
-          {projects.map((project) => (
-            <Card key={project.title} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="p-0">
-                    <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={600}
-                        height={400}
-                        className="w-full h-auto object-cover"
-                        data-ai-hint={project.hint}
-                    />
-                </CardHeader>
-                <CardContent className="p-6">
-                    <CardTitle className="font-headline mb-2">{project.title}</CardTitle>
-                    <CardDescription className="mb-4">{project.description}</CardDescription>
-                    <div className="flex flex-wrap gap-2">
-                        {project.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
-                    </div>
-                </CardContent>
+        <div className="mx-auto grid max-w-7xl items-stretch gap-8 sm:grid-cols-1 md:gap-12 lg:grid-cols-3 pt-12">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.name} className="bg-transparent border border-primary/30 p-6 flex flex-col space-y-4 rounded-xl">
+              <div className="flex items-center gap-4">
+                <Avatar className="w-12 h-12 border-2 border-primary/50">
+                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
+                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-semibold font-headline">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                </div>
+              </div>
+              <CardContent className="p-0 flex-1">
+                <blockquote className="text-lg text-white/80 leading-relaxed h-full">
+                  “{testimonial.quote}”
+                </blockquote>
+              </CardContent>
             </Card>
           ))}
         </div>
