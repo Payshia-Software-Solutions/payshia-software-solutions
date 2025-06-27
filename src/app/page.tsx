@@ -16,14 +16,14 @@ export default async function Home() {
       <main className="flex-1">
         <HeroSection />
         <div className="relative">
-          <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/30 to-transparent" />
+          <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 to-transparent" />
           <div className="relative z-10">
             <TransformingSection />
             <ServicesSection />
             <WhyChooseUsSection />
             <TrustedBySection />
-            <PortfolioSection />
             <CtaSection />
+            <PortfolioSection />
           </div>
         </div>
       </main>
