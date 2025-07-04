@@ -27,9 +27,9 @@ const serviceSubItems = [
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Why Us', href: '/why-us' },
   { name: 'Services', href: '/services', subItems: serviceSubItems },
   { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Why Us', href: '/why-us' },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
