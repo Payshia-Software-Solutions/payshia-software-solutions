@@ -80,18 +80,14 @@ export function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-background text-foreground">
+            <SheetContent side="left" className="bg-background text-foreground p-0">
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b">
+                <div className="flex items-center p-6 border-b">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                         <span className="font-bold text-lg font-headline inline-block text-primary">Payshia</span>
                     </Link>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                        <X className="h-5 w-5" />
-                        <span className="sr-only">Close Menu</span>
-                    </Button>
                 </div>
-                <nav className="flex-1 px-4 py-6 space-y-2">
+                <nav className="flex-1 px-6 py-6 space-y-2">
                     {navItems.map((item) => (
                       item.subItems ? (
                         <Collapsible key={item.name} className="space-y-2">
