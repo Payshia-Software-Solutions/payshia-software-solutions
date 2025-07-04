@@ -77,8 +77,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
-            <p className="mb-4 sm:mb-0">© {new Date().getFullYear()} Payshia Software Solutions. All rights reserved.</p>
-            <div className="flex space-x-6">
+            <p className="mb-4 sm:mb-0 text-center sm:text-left">© {new Date().getFullYear()} Payshia Software Solutions. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
                 <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
                 <Link href="#" className="hover:text-primary transition-colors">Cookie Policy</Link>
