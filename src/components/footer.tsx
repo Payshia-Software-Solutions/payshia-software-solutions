@@ -47,11 +47,11 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-headline font-semibold text-white">Services</h4>
             <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-primary transition-colors">Custom Software Development</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Web Development</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">IT Consulting</Link></li>
+              <li><Link href="/services/custom-software-development" className="hover:text-primary transition-colors">Custom Software Development</Link></li>
+              <li><Link href="/services/mobile-app-development" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
+              <li><Link href="/services/cloud-solutions" className="hover:text-primary transition-colors">Cloud Solutions</Link></li>
+              <li><Link href="/services/ui-ux-design" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
+              <li><Link href="/services/it-consulting" className="hover:text-primary transition-colors">IT Consulting</Link></li>
             </ul>
           </div>
 

@@ -1,15 +1,34 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import Link from 'next/link';
+
+const serviceSubItems = [
+    { name: 'Custom Software Development', href: '/services/custom-software-development' },
+    { name: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
+    { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+    { name: 'IT Consulting', href: '/services/it-consulting' },
+];
 
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Why Us', href: '/why-us' },
-  { name: 'Services', href: '/services' },
+  { name: 'Services', href: '/services', subItems: serviceSubItems },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
@@ -26,9 +45,27 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex flex-1 items-center justify-center space-x-8 text-sm font-medium">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="transition-colors hover:text-primary text-white/80">
-              {item.name}
-            </Link>
+            item.subItems ? (
+              <DropdownMenu key={item.name}>
+                <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-primary text-white/80 focus:outline-none">
+                  {item.name}
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border-primary/20 text-white">
+                  {item.subItems.map((subItem) => (
+                    <DropdownMenuItem key={subItem.name} asChild>
+                      <Link href={subItem.href} className="hover:!bg-primary/20 !text-white hover:!text-primary">
+                        {subItem.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link key={item.name} href={item.href} className="transition-colors hover:text-primary text-white/80">
+                {item.name}
+              </Link>
+            )
           ))}
         </nav>
         <div className="flex items-center justify-end space-x-2 ml-auto">
@@ -53,11 +90,27 @@ export function Header() {
                         <span className="sr-only">Close Menu</span>
                     </Button>
                 </div>
-                <nav className="flex-1 px-4 py-6 space-y-4">
+                <nav className="flex-1 px-4 py-6 space-y-2">
                     {navItems.map((item) => (
+                      item.subItems ? (
+                        <Collapsible key={item.name} className="space-y-2">
+                          <CollapsibleTrigger className="flex justify-between items-center w-full text-lg font-medium [&[data-state=open]>svg]:rotate-180">
+                            {item.name}
+                            <ChevronDown className="h-5 w-5 transition-transform" />
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="pl-4 mt-2 space-y-2">
+                            {item.subItems.map((subItem) => (
+                              <Link key={subItem.name} href={subItem.href} className="block text-base font-medium text-white/80" onClick={() => setIsMobileMenuOpen(false)}>
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      ) : (
                         <Link key={item.name} href={item.href} className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>
                             {item.name}
                         </Link>
+                      )
                     ))}
                 </nav>
               </div>

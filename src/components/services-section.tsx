@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Code, Smartphone, Cloud, Settings, ArrowRight } from "lucide-react";
+import { Code, Smartphone, Cloud, Settings, ArrowRight, PenTool } from "lucide-react";
 import Link from 'next/link';
 
 const services = [
@@ -7,25 +7,31 @@ const services = [
     icon: <Code className="w-8 h-8 text-primary" />,
     title: "Custom Software Development",
     description: "Tailored software solutions designed to meet your unique business requirements and objectives.",
-    href: "#",
+    href: "/services/custom-software-development",
   },
   {
     icon: <Smartphone className="w-8 h-8 text-primary" />,
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
-    href: "#",
+    href: "/services/mobile-app-development",
   },
   {
     icon: <Cloud className="w-8 h-8 text-primary" />,
     title: "Cloud Solutions",
     description: "Scalable cloud infrastructure and migration services to optimize your business operations.",
-    href: "#",
+    href: "/services/cloud-solutions",
+  },
+    {
+    icon: <PenTool className="w-8 h-8 text-primary" />,
+    title: "UI/UX Design",
+    description: "Creating intuitive and beautiful user interfaces for maximum user engagement and satisfaction.",
+    href: "/services/ui-ux-design",
   },
   {
     icon: <Settings className="w-8 h-8 text-primary" />,
     title: "IT Consulting",
     description: "Strategic technology guidance to help you make informed decisions for digital transformation.",
-    href: "#",
+    href: "/services/it-consulting",
   },
 ];
 
@@ -41,7 +47,7 @@ export function ServicesSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-none items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-16">
+        <div className="mx-auto grid max-w-7xl items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3 pt-16">
           {services.map((service) => (
             <div key={service.title} className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl flex flex-col p-6 space-y-6 hover:border-primary/50 transition-colors duration-300 transform hover:-translate-y-2">
               <div className="bg-background text-primary w-16 h-16 rounded-lg flex items-center justify-center shadow-lg">
