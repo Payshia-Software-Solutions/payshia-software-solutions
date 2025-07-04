@@ -21,7 +21,7 @@ export function Header() {
     <header className="absolute top-0 z-50 w-full bg-transparent text-white">
       <div className="container flex h-24 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="text-2xl font-bold font-headline inline-block text-primary">Payshia <span className="text-white">Software Solutions</span></span>
+          <span className="text-2xl font-bold font-headline inline-block text-primary">Payshia <span className="text-white hidden md:inline">Software Solutions</span></span>
         </Link>
         <nav className="hidden md:flex flex-1 items-center justify-center space-x-8 text-sm font-medium">
           {navItems.map((item) => (
@@ -45,7 +45,7 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-bold text-lg font-headline inline-block text-primary">Payshia <span className="text-foreground">Software Solutions</span></span>
+                        <span className="font-bold text-lg font-headline inline-block text-primary">Payshia</span>
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                         <X className="h-5 w-5" />
