@@ -9,7 +9,7 @@ export function Footer() {
           {/* Column 1: About */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-                <span className="text-xl font-bold font-headline text-primary">Payshia <span className="text-white">Software</span></span>
+                <span className="text-xl font-bold font-headline text-primary">Payshia <span className="text-white">Software Solutions</span></span>
             </Link>
             <p className="pr-4">
               Empowering businesses with innovative software solutions that drive growth and efficiency.
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
-            <p className="mb-4 sm:mb-0">© {new Date().getFullYear()} Payshia Software Solution Pvt Ltd. All rights reserved.</p>
+            <p className="mb-4 sm:mb-0">© {new Date().getFullYear()} Payshia Software Solutions. All rights reserved.</p>
             <div className="flex space-x-6">
                 <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
                 <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>

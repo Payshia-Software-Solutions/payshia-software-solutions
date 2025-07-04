@@ -3,7 +3,7 @@
 'use server';
 
 /**
- * @fileOverview Generates a tailored introductory content for ApexForge Digital.
+ * @fileOverview Generates a tailored introductory content for Payshia Software Solutions.
  *
  * - generateCompanyIntro - A function that generates the company intro.
  * - GenerateCompanyIntroInput - The input type for the generateCompanyIntro function.
@@ -26,7 +26,7 @@ export type GenerateCompanyIntroInput = z.infer<typeof GenerateCompanyIntroInput
 const GenerateCompanyIntroOutputSchema = z.object({
   introduction: z
     .string()
-    .describe('The tailored introductory content for ApexForge Digital.'),
+    .describe('The tailored introductory content for Payshia Software Solutions.'),
 });
 
 export type GenerateCompanyIntroOutput = z.infer<typeof GenerateCompanyIntroOutputSchema>;
@@ -43,7 +43,7 @@ const prompt = ai.definePrompt({
   output: {schema: GenerateCompanyIntroOutputSchema},
   prompt: `You are an expert marketing copywriter specializing in creating introductory content for software development companies.
 
-You will use this information about the current trends in software development to generate an introduction for ApexForge Digital, a software company.
+You will use this information about the current trends in software development to generate an introduction for Payshia Software Solutions, a software company.
 
 Current Trends: {{{currentTrends}}}
 

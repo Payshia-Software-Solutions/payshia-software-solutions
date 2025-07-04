@@ -7,7 +7,7 @@ export function TransformingSection() {
             Transforming Ideas into Digital Reality
           </h2>
           <p className="text-lg text-white/80 md:text-xl">
-            At Payshia Software Solution, we bridge the gap between innovative technology and business success. Our mission is to empower organizations with custom software solutions that drive growth, enhance efficiency, and create lasting competitive advantages in today's digital landscape.
+            At Payshia Software Solutions, we bridge the gap between innovative technology and business success. Our mission is to empower organizations with custom software solutions that drive growth, enhance efficiency, and create lasting competitive advantages in today's digital landscape.
           </p>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 
 export function HeroSection() {
     const { toast } = useToast();
-    const [intro, setIntro] = useState<GenerateCompanyIntroOutput>({ introduction: "Your Partner in Digital Transformation. Payshia Software Solution Pvt Ltd. delivers cutting-edge software development and IT services tailored to propel your business forward." });
+    const [intro, setIntro] = useState<GenerateCompanyIntroOutput>({ introduction: "Your Partner in Digital Transformation. Payshia Software Solutions delivers cutting-edge software development and IT services tailored to propel your business forward." });
   
     useEffect(() => {
       generateCompanyIntro({ currentTrends: 'AI-driven development and automation' })

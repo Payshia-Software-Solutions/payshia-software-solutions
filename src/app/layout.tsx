@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Payshia Software',
+  title: 'Payshia Software Solutions',
   description: 'Your Partner in Digital Transformation.',
 };
 
