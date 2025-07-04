@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { generateCompanyIntro, GenerateCompanyIntroOutput } from '@/ai/flows/generate-company-intro';
 import { useEffect, useState, useMemo } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Skeleton } from '@/components/ui/skeleton';
 
 export function HeroSection() {
     const { toast } = useToast();
@@ -84,10 +83,9 @@ export function HeroSection() {
             <span className="text-primary animate-blink ml-1">|</span>
           </h1>
           {isIntroLoading ? (
-            <div className="space-y-2 max-w-[750px] w-full mx-auto">
-                <Skeleton className="h-5 w-full bg-white/10" />
-                <Skeleton className="h-5 w-4/5 bg-white/10" />
-            </div>
+            <p className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-pulse">
+                Please wait...
+            </p>
           ) : (
             <p 
                 className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-fade-in-up"
