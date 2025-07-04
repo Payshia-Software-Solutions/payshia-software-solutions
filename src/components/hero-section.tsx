@@ -9,10 +9,14 @@ import { useToast } from '@/hooks/use-toast';
 export function HeroSection() {
     const { toast } = useToast();
     const [intro, setIntro] = useState<GenerateCompanyIntroOutput>({ introduction: "Payshia Software Solutions delivers cutting-edge software development and IT services tailored to propel your business forward." });
+    const [introKey, setIntroKey] = useState(0);
   
     useEffect(() => {
       generateCompanyIntro({ currentTrends: 'AI-driven development and automation' })
-        .then(setIntro)
+        .then(newIntro => {
+          setIntro(newIntro);
+          setIntroKey(key => key + 1);
+        })
         .catch((e) => {
             console.error(e);
             toast({
@@ -75,7 +79,9 @@ export function HeroSection() {
             <span className="text-primary animate-blink ml-1">|</span>
           </h1>
           <p 
-            className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl" 
+            key={introKey}
+            className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-fade-in-up"
+            style={{animationDuration: '0.8s'}}
           >
             {intro.introduction}
           </p>
