@@ -84,7 +84,7 @@ export function HeroSection() {
           </h1>
           {isIntroLoading ? (
             <p className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-pulse">
-                Please wait...
+                Crafting the perfect introduction...
             </p>
           ) : (
             <p 
