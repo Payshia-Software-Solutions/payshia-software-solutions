@@ -98,12 +98,14 @@ export function Header() {
                             </div>
                             <ChevronDown className="h-5 w-5 transition-transform" />
                           </CollapsibleTrigger>
-                          <CollapsibleContent className="pl-11 mt-1 space-y-1">
-                            {item.subItems.map((subItem) => (
-                              <Link key={subItem.name} href={subItem.href} className="block rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-accent hover:text-accent-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                                {subItem.name}
-                              </Link>
-                            ))}
+                          <CollapsibleContent className="pl-11 mt-1">
+                            <div className="relative -ml-[22px] border-l-2 border-primary/20 pl-4 py-1 space-y-1">
+                                {item.subItems.map((subItem) => (
+                                <Link key={subItem.name} href={subItem.href} className="block rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-accent hover:text-accent-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                                    {subItem.name}
+                                </Link>
+                                ))}
+                            </div>
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
