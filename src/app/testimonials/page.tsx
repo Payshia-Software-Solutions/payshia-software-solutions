@@ -1,5 +1,5 @@
 import { Header } from '@/components/header';
-import { PortfolioSection } from '@/components/portfolio-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 import { Footer } from '@/components/footer';
 
 export default function TestimonialsPage() {
@@ -7,7 +7,7 @@ export default function TestimonialsPage() {
     <div className="flex flex-col min-h-screen bg-black text-white">
       <Header />
       <main className="flex-1 pt-24">
-        <PortfolioSection />
+        <TestimonialsSection />
       </main>
       <Footer />
     </div>

@@ -7,6 +7,7 @@ import { CtaSection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 import { WhyChooseUsSection } from '@/components/why-choose-us-section';
 import { TrustedBySection } from '@/components/trusted-by-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 
 export default async function Home() {
 
@@ -21,9 +22,10 @@ export default async function Home() {
             <TransformingSection />
             <ServicesSection />
             <WhyChooseUsSection />
+            <PortfolioSection />
+            <TestimonialsSection />
             <TrustedBySection />
             <CtaSection />
-            <PortfolioSection />
           </div>
         </div>
       </main>
