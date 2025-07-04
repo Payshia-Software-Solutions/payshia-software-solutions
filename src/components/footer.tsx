@@ -61,11 +61,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-1 text-primary shrink-0" />
-                <span>123 Tech Park, Sector 15, Gurugram, Haryana, India - 122001</span>
+                <span>No. 42, Main Street, Pelmadulla, Rathnapura, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-primary transition-colors">+91 98765 43210</a>
+                <a href="tel:+94771234567" className="hover:text-primary transition-colors">+94 77 123 4567</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />

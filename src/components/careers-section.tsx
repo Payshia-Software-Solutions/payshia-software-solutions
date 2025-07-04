@@ -29,17 +29,17 @@ const benefits = [
 const openPositions = [
     {
       title: "Senior Frontend Developer",
-      location: "Gurugram, India (Remote options available)",
+      location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
       department: "Engineering"
     },
     {
         title: "UI/UX Designer",
-        location: "Gurugram, India (Remote options available)",
+        location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
         department: "Design"
     },
     {
         title: "Cloud Solutions Architect",
-        location: "Gurugram, India (Remote options available)",
+        location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
         department: "Cloud Services"
     }
 ]
