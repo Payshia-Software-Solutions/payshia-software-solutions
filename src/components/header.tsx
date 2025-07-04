@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Home, Briefcase, LayoutGrid, Heart, Quote, Users, Mail } from 'lucide-react';
+import { Menu, ChevronDown, Home, Briefcase, LayoutGrid, Heart, Quote, Users, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -81,6 +81,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="bg-background text-foreground p-0">
+              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
               <div className="flex flex-col h-full">
                 <div className="flex items-center p-6 border-b border-primary/20">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
