@@ -5,17 +5,19 @@ import Link from 'next/link';
 import { generateCompanyIntro, GenerateCompanyIntroOutput } from '@/ai/flows/generate-company-intro';
 import { useEffect, useState, useMemo } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export function HeroSection() {
     const { toast } = useToast();
-    const [intro, setIntro] = useState<GenerateCompanyIntroOutput>({ introduction: "Payshia Software Solutions delivers cutting-edge software development and IT services tailored to propel your business forward." });
-    const [introKey, setIntroKey] = useState(0);
+    const defaultIntro = "Payshia Software Solutions delivers cutting-edge software development and IT services tailored to propel your business forward.";
+    const [intro, setIntro] = useState<GenerateCompanyIntroOutput | null>(null);
+    const [isIntroLoading, setIsIntroLoading] = useState(true);
   
     useEffect(() => {
+      setIsIntroLoading(true);
       generateCompanyIntro({ currentTrends: 'AI-driven development and automation' })
         .then(newIntro => {
           setIntro(newIntro);
-          setIntroKey(key => key + 1);
         })
         .catch((e) => {
             console.error(e);
@@ -24,6 +26,9 @@ export function HeroSection() {
                 description: "Failed to generate company intro. Make sure your GOOGLE_API_KEY is set in .env",
                 variant: "destructive"
             })
+        })
+        .finally(() => {
+            setIsIntroLoading(false);
         });
     }, [toast]);
     
@@ -78,13 +83,19 @@ export function HeroSection() {
             <span>{text}</span>
             <span className="text-primary animate-blink ml-1">|</span>
           </h1>
-          <p 
-            key={introKey}
-            className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-fade-in-up"
-            style={{animationDuration: '0.8s'}}
-          >
-            {intro.introduction}
-          </p>
+          {isIntroLoading ? (
+            <div className="space-y-2 max-w-[750px] w-full mx-auto">
+                <Skeleton className="h-5 w-full bg-white/10" />
+                <Skeleton className="h-5 w-4/5 bg-white/10" />
+            </div>
+          ) : (
+            <p 
+                className="max-w-[750px] mx-auto text-lg text-white/80 md:text-xl animate-fade-in-up"
+                style={{animationDuration: '0.8s'}}
+            >
+                {intro?.introduction || defaultIntro}
+            </p>
+          )}
           <div 
             className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4" 
           >
