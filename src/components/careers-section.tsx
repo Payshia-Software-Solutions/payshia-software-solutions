@@ -41,6 +41,16 @@ const openPositions = [
         title: "Cloud Solutions Architect",
         location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
         department: "Cloud Services"
+    },
+    {
+        title: "UI/UX Engineer Intern",
+        location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
+        department: "Design"
+    },
+    {
+        title: "Software Engineer Intern",
+        location: "Pelmadulla, Rathnapura, Sri Lanka (Remote options available)",
+        department: "Engineering"
     }
 ]
 
