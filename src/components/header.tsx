@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, Briefcase, LayoutGrid, Heart, Quote, Users, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -26,13 +26,13 @@ const serviceSubItems = [
 ];
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services', subItems: serviceSubItems },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Why Us', href: '/why-us' },
-  { name: 'Testimonials', href: '/testimonials' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Home', href: '/', icon: <Home className="h-5 w-5" /> },
+  { name: 'Services', href: '/services', subItems: serviceSubItems, icon: <Briefcase className="h-5 w-5" /> },
+  { name: 'Portfolio', href: '/portfolio', icon: <LayoutGrid className="h-5 w-5" /> },
+  { name: 'Why Us', href: '/why-us', icon: <Heart className="h-5 w-5" /> },
+  { name: 'Testimonials', href: '/testimonials', icon: <Quote className="h-5 w-5" /> },
+  { name: 'Careers', href: '/careers', icon: <Users className="h-5 w-5" /> },
+  { name: 'Contact', href: '/contact', icon: <Mail className="h-5 w-5" /> },
 ];
 
 export function Header() {
@@ -82,30 +82,34 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="bg-background text-foreground p-0">
               <div className="flex flex-col h-full">
-                <div className="flex items-center p-6 border-b">
+                <div className="flex items-center p-6 border-b border-primary/20">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                         <span className="font-bold text-lg font-headline inline-block text-primary">Payshia</span>
                     </Link>
                 </div>
-                <nav className="flex-1 px-6 py-6 space-y-2">
+                <nav className="flex-1 px-4 py-6 space-y-1">
                     {navItems.map((item) => (
                       item.subItems ? (
-                        <Collapsible key={item.name} className="space-y-2">
-                          <CollapsibleTrigger className="flex justify-between items-center w-full text-lg font-medium [&[data-state=open]>svg]:rotate-180">
-                            {item.name}
+                        <Collapsible key={item.name} className="space-y-1">
+                          <CollapsibleTrigger className="flex justify-between items-center w-full text-base font-medium rounded-md px-3 py-2 hover:bg-accent hover:text-accent-foreground transition-colors [&[data-state=open]>svg]:rotate-180">
+                            <div className="flex items-center gap-3">
+                                {item.icon}
+                                <span>{item.name}</span>
+                            </div>
                             <ChevronDown className="h-5 w-5 transition-transform" />
                           </CollapsibleTrigger>
-                          <CollapsibleContent className="pl-4 mt-2 space-y-2">
+                          <CollapsibleContent className="pl-11 mt-1 space-y-1">
                             {item.subItems.map((subItem) => (
-                              <Link key={subItem.name} href={subItem.href} className="block text-base font-medium text-white/80" onClick={() => setIsMobileMenuOpen(false)}>
+                              <Link key={subItem.name} href={subItem.href} className="block rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-accent hover:text-accent-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                                 {subItem.name}
                               </Link>
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
-                        <Link key={item.name} href={item.href} className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-                            {item.name}
+                        <Link key={item.name} href={item.href} className="flex items-center gap-3 rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                            {item.icon}
+                            <span>{item.name}</span>
                         </Link>
                       )
                     ))}
