@@ -14,7 +14,7 @@ export function CtaSection() {
           </p>
           <div className="pt-4">
             <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-              <Link href="#contact">Request a Consultation</Link>
+              <Link href="/contact">Request a Consultation</Link>
             </Button>
           </div>
         </div>

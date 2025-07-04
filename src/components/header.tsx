@@ -8,10 +8,10 @@ import Link from 'next/link';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Why Us', href: '#why-us' },
-  { name: 'Services', href: '#services' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Why Us', href: '/why-us' },
+  { name: 'Services', href: '/services' },
+  { name: 'Testimonials', href: '/testimonials' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
         </nav>
         <div className="flex items-center justify-end space-x-2 ml-auto">
           <Button asChild>
-            <Link href="#contact">Get in Touch</Link>
+            <Link href="/contact">Get in Touch</Link>
           </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>

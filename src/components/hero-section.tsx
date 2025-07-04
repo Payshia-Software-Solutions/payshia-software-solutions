@@ -98,10 +98,10 @@ export function HeroSection() {
             className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4" 
           >
             <Button size="lg" asChild>
-                <Link href="#services">Explore Our Services</Link>
+                <Link href="/services">Explore Our Services</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-primary text-primary-foreground hover:bg-primary/10">
-                <Link href="#contact">Get a Free Consultation</Link>
+                <Link href="/contact">Get a Free Consultation</Link>
             </Button>
           </div>
         </div>
