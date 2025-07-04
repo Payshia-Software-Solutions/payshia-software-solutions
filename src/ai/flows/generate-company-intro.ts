@@ -43,7 +43,7 @@ const prompt = ai.definePrompt({
   output: {schema: GenerateCompanyIntroOutputSchema},
   prompt: `You are an expert marketing copywriter specializing in creating introductory content for software development companies.
 
-You will use this information about the current trends in software development to generate a short and compelling introduction for Payshia Software Solutions, a software company. The introduction should be a single, compelling sentence of about 15 to 25 words.
+You will use this information about the current trends in software development to generate a compelling introduction for Payshia Software Solutions. The introduction should be approximately two sentences long, highlighting how the company transforms businesses using innovative technology.
 
 Current Trends: {{{currentTrends}}}
 
