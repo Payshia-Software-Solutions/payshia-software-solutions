@@ -62,11 +62,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-1 text-primary shrink-0" />
-                <span>No. 42, Main Street, Pelmadulla, Rathnapura, Sri Lanka</span>
+                <span>Midigahamulla, Pelmadulla</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <a href="tel:+94771234567" className="hover:text-primary transition-colors">+94 77 123 4567</a>
+                <a href="tel:+94770481363" className="hover:text-primary transition-colors">+94 77 048 1363</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
@@ -78,7 +78,7 @@ export function Footer() {
 
         <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
             <p className="mb-4 sm:mb-0 text-center sm:text-left">© {new Date().getFullYear()} Payshia Software Solutions. All rights reserved.</p>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <div className="flex flex-col sm:flex-row items-center gap-x-6 gap-y-2">
                 <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
                 <Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
                 <Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link>

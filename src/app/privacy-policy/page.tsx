@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
       <Header />
-      <main className="flex-1 pt-32 pb-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 to-transparent">
+      <main className="flex-1 pt-32 pb-20 bg-background/95 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent bg-[length:150%_150%] animate-wave">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto space-y-8 text-white/80">
             <header className="space-y-4">
@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
                 <ul className="list-disc list-inside space-y-2 pl-4">
                     <li>By email: info@payshia.com</li>
                     <li>By visiting our contact page.</li>
-                    <li>By phone number: +94 77 123 4567</li>
+                    <li>By phone number: +94770481363</li>
                 </ul>
             </section>
           </div>
