@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -6,45 +7,59 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-commerce Platform for Retail Giant",
-    description: "A fully-featured e-commerce platform with a custom CMS, and integrated payment gateways, boosting sales by 40%.",
+    title: "Ceylon Pharma College",
+    description: "A comprehensive solution including an LMS, Website, and ERP system to streamline operations for a leading pharmaceutical college.",
     image: "https://placehold.co/600x400.png",
-    hint: "online store website",
+    hint: "education management system",
     link: "#"
   },
   {
-    title: "Mobile Banking App",
-    description: "A secure and intuitive mobile banking application for iOS and Android, offering seamless transaction management.",
+    title: "GoTickets.lk",
+    description: "An intuitive and scalable online ticketing platform for events, making ticket purchasing seamless for users.",
     image: "https://placehold.co/600x400.png",
-    hint: "mobile banking app",
+    hint: "online ticketing platform",
     link: "#"
   },
   {
-    title: "AI-Powered Logistics Dashboard",
-    description: "A real-time logistics and fleet management dashboard with predictive analytics to optimize delivery routes.",
+    title: "Tea Jar E-commerce",
+    description: "A beautiful e-commerce platform for www.teajarceylon.com, showcasing and selling premium Ceylon tea products online.",
     image: "https://placehold.co/600x400.png",
-    hint: "logistics dashboard data",
-    link: "#"
+    hint: "ecommerce website tea",
+    link: "https://www.teajarceylon.com"
   },
    {
-    title: "Healthcare Management System",
-    description: "A comprehensive system for hospitals to manage patient records, appointments, and billing efficiently.",
+    title: "KDU Group Corporate Website",
+    description: "A professional and modern corporate website for the KDU Group, enhancing their online presence.",
     image: "https://placehold.co/600x400.png",
-    hint: "hospital management software",
+    hint: "corporate website design",
     link: "#"
   },
   {
-    title: "Custom CRM for Sales Teams",
-    description: "A bespoke CRM solution that automates sales workflows, tracks leads, and provides in-depth analytics.",
+    title: "KDU Export Website",
+    description: "A dedicated website for KDU's export division, designed to attract international clients and showcase products.",
     image: "https://placehold.co/600x400.png",
-    hint: "crm dashboard interface",
+    hint: "export business website",
     link: "#"
   },
   {
-    title: "Interactive E-Learning Portal",
-    description: "An engaging e-learning platform with video lectures, quizzes, and progress tracking for students.",
+    title: "Grammar Seed English Learning Platform",
+    description: "An engaging website for an English learning platform, making education accessible and interactive.",
     image: "https://placehold.co/600x400.png",
-    hint: "online learning website",
+    hint: "e-learning platform",
+    link: "#"
+  },
+  {
+    title: "Payshia ERP",
+    description: "A powerful and scalable in-house ERP solution to streamline business processes and improve efficiency.",
+    image: "https://placehold.co/600x400.png",
+    hint: "erp system dashboard",
+    link: "#"
+  },
+    {
+    title: "බත්ඒක.lk",
+    description: "A unique local platform, demonstrating our versatility and commitment to local market solutions.",
+    image: "https://placehold.co/600x400.png",
+    hint: "local business website",
     link: "#"
   }
 ];
@@ -80,7 +95,7 @@ export function PortfolioSection() {
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <Button variant="link" asChild className="p-0 text-primary group/link">
-                  <Link href={project.link}>
+                  <Link href={project.link} target="_blank" rel="noopener noreferrer">
                     View Project <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </Button>
